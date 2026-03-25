@@ -1,45 +1,96 @@
 # -active-directory-lab
 Active Directory home lab with file server and GPO
-# Active Directory Home Lab
+#  Active Directory Home Lab
 
 ##  Overview
 
-This project demonstrates a complete Active Directory lab environment built using VirtualBox.
+This project demonstrates a complete Active Directory environment built using VirtualBox, including domain controller, file server, and client machine.
 
-##  Infrastructure
+---
 
-* **DC01** – Domain Controller (AD DS, DNS)
-* **FS01** – File Server (Shares + NTFS permissions)
-* **CL01** – Client machine (domain joined)
+##  Lab Architecture
+
+* **DC01** – Domain Controller (Active Directory, DNS)
+* **FS01** – File Server (Shares + NTFS Permissions)
+* **CL01** – Client Machine (Domain Joined)
+
+---
 
 ##  Features Implemented
 
-* Active Directory Domain Services
-* DNS configuration
+* Active Directory Domain Services (AD DS)
+* DNS configuration and domain resolution
 * Organizational Units (IT, HR, Sales)
-* Users and Security Groups
-* NTFS & Share Permissions
+* User and Group management
+* NTFS and Share permissions
 * File Server deployment
-* Group Policy (GPO) drive mapping
-* Troubleshooting (authentication, DNS, permissions)
+* Group Policy (GPO) configuration
+* Drive mapping automation (Z:)
+
+---
 
 ##  File Server Structure
 
-\FS01\Shares
+\\FS01\Shares
 
 * IT
 * HR
 * Sales
 
-##  GPO
+---
 
-* Automatically maps Z: drive for IT users
-* Path: \FS01\Shares\IT
+##  GPO Configuration
+
+* Drive Mapping:
+
+  * Path: `\\\\FS01\\Shares\\IT`
+  * Drive Letter: `Z:`
+* Applied to: IT Users (OU-based targeting)
+
+---
+
+##  Result
+
+* IT users automatically receive mapped drive (Z:)
+* Access controlled via security groups
+* Centralized authentication through Active Directory
+
+---
+
+##  Screenshots
+
+### Active Directory Users
+
+![AD Users](ad-users.png)
+
+### File Server Shares
+
+![Shares](file-shares.png)
+
+### NTFS Permissions
+
+![Permissions](ntfs-permissions.png)
+
+### GPO Drive Mapping
+
+![GPO](gpo-drive.png)
+
+### Mapped Drive (Client)
+
+![Z Drive](z-drive.png)
+
+---
 
 ##  Skills Demonstrated
 
 * Windows Server Administration
 * Active Directory Management
 * Group Policy Configuration
-* File Server Management
-* Troubleshooting IT Infrastructure
+* File Server & Permissions
+* Troubleshooting (DNS, authentication, access issues)
+
+---
+
+##  Outcome
+
+Built and configured a fully functional enterprise-style Windows domain environment with centralized management and automated resource access.
